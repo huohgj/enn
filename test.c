@@ -1,59 +1,49 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
 #include <stdio.h>
-//int max(int x,int y)
-//{
-//	if(x>y)
-//		return x;
-//	else
-//		return y;
-//		
-//}
+#include <string.h>
+#include <Windows.h>
+#include<stdlib.h>
 int main()
 {
-	//条件操作符
-	int a  = 10;
-	int b = 20;
-	int add = 0;
-	add (a>b? a:b);
-	//a是否大于b，是的话他会输出a，不是的话他会输出b
+	int i = 0;
+	char password[]={0};
 	
+	for(i=0;i<3;i++)
+	{
+		printf("请输入密码： ");
+		scanf("%s",password);
+		if(strcmp(password,"13537986917")==0)
+		{
+			printf("登录成功\n");
+			break;
+		}
+		else
+		{
+			printf("密码错误，请重新输入！\n");
+		}
+	}
+	if(i == 3)
+	{
+		printf("密码次数已达三次，自动退出\n");
+
+	}
 
 
 
-
-
-	//逻辑操作符
-	//真 -- 是非零的数都是真的
-	//假 -- 为零
-	//&& -- 逻辑与 ：意思就是两个条件都要是真的最后答案才是真
-	//|| -- 逻辑或 ， 有一个是真的结果就是真的。
-	//显示1就是真的，显示出零意思就是假的。
-	//int a = 3;
-	//int b = 5;
-	//int c = a && b ;
-	///*inr c = a || b ;*/
-	//printf("c = %d\n",c);
-
-
-
-
-	//1和-1从他存储的地方可以看出来，
-	//[][][][][][][][][][][][][][][][]在最高位上他是1的话那这个数就为负数，为零的话就是正数。
-	//int num1 = 10;
-	//int num2 = 30;
-	//int sum = 0; 
-	//sum = max (num1,num2);
-	//printf("sum=%d\n",sum);
-		
-//	//较大值
-//	int num1 = 10;
-//	int num2 = 40;
-//	if(num1>num2)
-//		printf("最大值：%d\n",num1);
-//	else 
-//	printf("最大值：%d\n",num2);
-		
-	
+	//char arr1[]="come on baby !!!!";
+	//char arr2[]="#################";
+	//int left = 0;
+	//int right = strlen(arr1)-1;//计算字符串的数量，用头文件string.h
+	//while(left<=right)
+	//{
+	//arr2[left]=arr1[left];
+	//arr2[right]=arr1[right];
+	//Sleep(1000);//毫秒,要用头文件Windows.h
+	//printf("%s\n",arr2);
+	//left++;
+	//right--;
+	///*system("cls");*/
+	//}
 	return 0;
+
 }
