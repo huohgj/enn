@@ -1,59 +1,50 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
 #include <stdio.h>
-//int max(int x,int y)
+
+
+//int is_prime(int n)
 //{
-//	if(x>y)
-//		return x;
-//	else
-//		return y;
-//		
-//}
+//	int j =2;
+//	
+//	
+//		if(n%j == 0)
+//		{
+//		return 0;
+//		}
+//	return 1;
+//}\
+
+
+//为什么要用地址的捏 ，因为函数设的是形式参数，他其实是实际参数的一份临时拷贝，不能改掉函数外的参数。
+//如果我们用地址的方式搞过去：传址调用；就可以根据地址改掉外面的参数
+//如果里面是设x,y那么x和y会另外创建一个新的地址跟a和b不同。
+int add(int* pa,int* pb)
+{
+		int tam =0;
+		tam = *pa;
+		*pa = *pb;
+		*pb=tam;
+		
+}
+
 int main()
 {
-	//条件操作符
-	int a  = 10;
+	//把a和b的值调换
+	int a = 10;
 	int b = 20;
-	int add = 0;
-	add (a>b? a:b);
-	//a是否大于b，是的话他会输出a，不是的话他会输出b
-	
+	printf("a=%d b=%d",a,b);
+	add(&a,&b);
+	printf("a=%d b=%d",a,b);
 
 
-
-
-
-	//逻辑操作符
-	//真 -- 是非零的数都是真的
-	//假 -- 为零
-	//&& -- 逻辑与 ：意思就是两个条件都要是真的最后答案才是真
-	//|| -- 逻辑或 ， 有一个是真的结果就是真的。
-	//显示1就是真的，显示出零意思就是假的。
-	//int a = 3;
-	//int b = 5;
-	//int c = a && b ;
-	///*inr c = a || b ;*/
-	//printf("c = %d\n",c);
-
-
-
-
-	//1和-1从他存储的地方可以看出来，
-	//[][][][][][][][][][][][][][][][]在最高位上他是1的话那这个数就为负数，为零的话就是正数。
-	//int num1 = 10;
-	//int num2 = 30;
-	//int sum = 0; 
-	//sum = max (num1,num2);
-	//printf("sum=%d\n",sum);
-		
-//	//较大值
-//	int num1 = 10;
-//	int num2 = 40;
-//	if(num1>num2)
-//		printf("最大值：%d\n",num1);
-//	else 
-//	printf("最大值：%d\n",num2);
-		
-	
+	////求100到200之间的  素数
+	//int i = 0;
+	//for(i=100;i<=200;i++)
+	//{
+	//	//求他是不是一个素数
+	//	if(is_prime(i) == 1 )
+	//		printf("%d",i);
+	//	
+	//}
 	return 0;
 }
